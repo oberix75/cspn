@@ -43,7 +43,7 @@ void main(int argc, int argv[])
     int PerBits = argv[5];
     
     unsigned int Entry;
-    unsigned int Mod
+    unsigned int Mod;
     
     unsigned int cipher1;
     unsigned int Sbox1;
