@@ -52,6 +52,8 @@ void main(int argc, int argv[])
     unsigned int Pbox2;
     unsigned int cipher3;
     unsigned int AND;
+
+    unsigned int round3;
     
     unsigned int ciphertext;
     
@@ -70,8 +72,9 @@ void main(int argc, int argv[])
         cipher3 = Pbox2 ^ key;
         AND = cipher3 & key;
         // MDS
-        ciphertext = AND ^ key;
-        // Ciphertext
+        round3 = AND ^ key;
+        // Third Round
+        ciphertext = round3 ^ (key % 2);
         
         printf("This is your ciphertext : %i\n", ciphertext);
     }
