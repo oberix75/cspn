@@ -75,6 +75,7 @@ void main(int argc, int argv[])
         round3 = AND ^ key;
         // Third Round
         ciphertext = (round3 % 2) ^ key;
+        // Ciphertext
         
         printf("This is your ciphertext : %i\n", ciphertext);
     }
