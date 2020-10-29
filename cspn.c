@@ -79,6 +79,10 @@ void main(int argc, int argv[])
         // Third Round
         ciphertext = (round3 % 64) ^ key;
         // Ciphertext and MDS
+      
+        /* 
+        TODO : CBC for Back to block, and logical sequence in MDS.
+        */
         
         printf("This is your ciphertext : %i\n", ciphertext);
     }
