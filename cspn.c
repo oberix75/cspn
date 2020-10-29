@@ -60,8 +60,10 @@ void main(int argc, int argv[])
     if (argc == 6)
     {
         Entry = plaintext ^ IV;
+        Mod = Entry * 64;
+        // Modulo for MDS
         // Fisrt XOR
-        cipher1 = Entry ^ key;
+        cipher1 = Mod ^ key;
         Sbox1 = ~(cipher1, SubBits);
         Pbox1 = Sbox1 & PerBits;
         // First Round
@@ -71,11 +73,11 @@ void main(int argc, int argv[])
         //Second Round
         cipher3 = Pbox2 ^ key;
         AND = cipher3 & key;
-        // MDS
+        // an AND
         round3 = AND ^ key;
         // Third Round
-        ciphertext = (round3 % 2) ^ key;
-        // Ciphertext
+        ciphertext = (round3 % 64) ^ key;
+        // Ciphertext and MDS
         
         printf("This is your ciphertext : %i\n", ciphertext);
     }
