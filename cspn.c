@@ -74,7 +74,7 @@ void main(int argc, int argv[])
         // MDS
         round3 = AND ^ key;
         // Third Round
-        ciphertext = round3 ^ (key % 2);
+        ciphertext = (round3 % 2) ^ key;
         
         printf("This is your ciphertext : %i\n", ciphertext);
     }
