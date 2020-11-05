@@ -61,7 +61,7 @@ void main(int argc, int argv[])
     if (argc == 6)
     {
         Entry = plaintext ^ IV;
-        Mod = Entry * 64;
+        Mod = Entry * 128;
         // Modulo for MDS
         // Fisrt XOR
         cipher1 = Mod ^ key;
