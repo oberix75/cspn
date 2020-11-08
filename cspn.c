@@ -74,6 +74,8 @@ int c256[] = {
     0x05, 0x93, 0x1C, 0xB6, 0xD4, 0x08, 0xE7, 0xFA
 };
 
+// Globals for rounds
+
 void main(int argc, int argv[])
 {
     int i;
